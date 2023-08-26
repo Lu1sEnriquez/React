@@ -2,23 +2,16 @@ import { useState } from "react";
 const Target = () => {
   let [count, setCount] = useState(0);
   let [isIncrement, setIsIncrement] = useState(true);
-  let [isDecrement, setIsDecrement] = useState(!isIncrement);
-
-  const handleDecrement = () => {
-    if (isIncrement == false) {
-      setIsIncrement(false);
-      setIsDecrement(true);
-    }
-  };
+  
   const handleIncrement = () => {
-    if (isDecrement == false) {
-      setIsDecrement(false);
-      setIsIncrement(true);
-    }
+    setIsIncrement(true)  
+  };
+  const handleDecrement = () => {
+    setIsIncrement(false)  
   };
 
   const handleCambiarValor = () => {
-    if (isDecrement == true) {
+    if (isIncrement== false) {
       setCount(count - 1);
     } else if (isIncrement == true) {
       setCount(count + 1);
@@ -27,17 +20,19 @@ const Target = () => {
   return (
     <main className="targeta-main">
       <h1>CONTADOR</h1>
+      <div className="container-count">
       <h2>{count}</h2>
+      </div>
       <div className="container-buttons">
         <button
           onClick={handleDecrement}
-          className={`button-accion ${isDecrement ? "selected" : ""}`}
+          className={`button-accion ${isIncrement==false?'selected':console.log(isIncrement)}`}
         >
           DECREMENTAR
         </button>
         <button
           onClick={handleIncrement}
-          className={`button-accion ${isDecrement ? "selected" : ""}`}
+          className={`button-accion ${isIncrement == true? "selected" : ""}`}
         >
           INCREMENTAR
         </button>

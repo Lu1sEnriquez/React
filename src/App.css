@@ -1,22 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&family=Poppins:wght@600&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
   padding: 0;
   margin: 0;
   position: relative;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:'Belanosima'
 }
 
 .targeta-main {
   position: absolute;
   width: 60%;
   left: 20%;
+  margin-top: 2rem;
   height: 500px;
-  background-color: red;
+  background-color: #348e91;
 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .targeta-main h1 {
@@ -32,7 +35,7 @@ body {
   font-weight: bold;
   border: none;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 0.7em;
   transition: 0.2s ease-in-out;
   -webkit-transition: 0.2s ease-in-out;
   -moz-transition: 0.2s ease-in-out;
@@ -40,22 +43,34 @@ body {
   -o-transition: 0.2s ease-in-out;
 }
 .button-accion:hover {
-  background-color: #254ac5;
-  color: #fff;
+  background-color: #213635;
+  color: #348e91;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
-.button-accion .selected {
-  background-color: #254ac5;
-  color: #fff;
+.button-accion.selected:hover {
+  
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
+}
+.button-accion.selected {
+  background-color: #0d192b;
+  color: #fff;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+.button-accion.selected:hover {
+  background-color: #213635;
+  color: #348e91;
 }
 
 .container-buttons {
@@ -63,4 +78,36 @@ body {
   display: flex;
   gap: 1em;
   width: 100%;
+}
+
+.container-count{
+  border: 3px solid #0d192b;
+  border-radius: 10%;
+  box-shadow:1px 1px 3px white;
+  
+  width: 25%;
+  height: 3em;
+  display: flex;
+  box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
+  color: #0d192b;
+  font-size: 2em;
+  background-color: #07f9a2;  
+}
+
+.button-cambiarValor{
+  font-size: medium;
+  font-weight: bold;
+  font-family: 'Poppins';
+  background-color: #f2f2f2;
+  color: #0d192b;
+  border: 2px solid #213635;
+  border-radius: 1rem;
+  transition: .3s ;
+}
+.button-cambiarValor:hover{
+  transform: scale(1.2);
+  background-color: dodgerblue ;
+  color: #f2f2f2;
 }
